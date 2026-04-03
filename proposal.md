@@ -56,61 +56,48 @@ List the technologies you expect to use.  Please note that this solution MUST li
 ---
 
 ## 6. Prerequisite Knowledge & Skills
-Assess your readiness for this project.
+As the second project a lot of skills where honed and are now able to be used in this semesters project.
+A pipeline for cleaning and formatting data as been implemented last time and also python web scraping was used to grab the PDF calendars. 
+A SQL database was setup and queried and a cron job was drafted for automation. 
+Therefore this E199 project builds on the skills we have used previously use, and allows us to practice them again.
 
-Include:
-- Skills you already have
-- Skills you need to learn
-- Relevant coursework completed
-- Prior projects or experience
+Ayden – Python, Databases, Linux, GitHub/Git, APIs, Parsing Files, Automation.
+Ian – Python, Web Scraping, Formatting, GUI, Bash, Linux, Automation.
+Darian – SQL, DDL (database defining), DQL (database queries), Python, Formatting, Linux.
 
-Be honest—this section helps scope the project appropriately.
 
 ---
 
 ## 7. Project Scope & Deliverables
-Define what success looks like.
-
-Include:
-- Minimum viable deliverable (MVP)
-- Required outputs (application, scripts, documentation, etc.)
-- Optional stretch goals (if time permits)
+The scope of this project is to design and implement an automated solution for grabbing E199 data from online and parsing and formatting the data to be inserted into a database. Development will be on the fetching, parsing, formatting, and sending to the database.
+Key considerations should be how the data is sent and in what format the end result should be in.
+Deliverables for this project include a GitHub repository containing the completed proposal, all source code, database schema definitions, config files, and the documentation required to deploy and maintain the automated process.
+A final live demonstration of the working pipeline will also be completed with each group member participating as required, with a complementary slideshow.
 
 ---
 
 ## 8. Milestones & Timeline
-Provide a rough timeline broken into phases.
-
-Example:
-- Phase 1: Research & Design
-- Phase 2: Core Implementation
-- Phase 3: Testing & Refinement
-- Phase 4: Documentation & Presentation
-
-Dates do not need to be exact, but planning is required.
+Phase 1: Plan and design what the required parts are for the project to be successful. This includes making the GitHub and completing the proposal.
+Phase 2: Implement a system to go and fetch E199 data in a readable format and automate the collection of this information. 
+Phase 3: Convert the data collected to the appropriate database schema and work to make sure the data is normalized in a clean and efficient way.
+Phase 4: Connect to the database and send frames of the correctly formatted data. Insure that this process is automatic and will result in the output of a clean database with scraped information from E199.
+Phase 5: Document the project and include everything required to run the project in a live environment and create a demo slideshow to present what the project can do. Ask for feedback from the professor and complete the implementation of the automated project in a live environment.
 
 ---
 
 ## 9. Risks, Constraints & Dependencies
-Identify potential challenges.
-
-Include:
-- Technical risks
-- Time constraints
-- External dependencies (APIs, credentials, access)
-- Mitigation strategies
+Risks: Changes or inconsistencies in the source data format might be hard to work around. Limited time within the half semester project window. Database remade schema might contain constraints we need to work with. Wrong commands can wipe the database, and if any preexisting data is present, that would not be ideal.
+Constraints: The automated solution must stay within the CPT department and also run on a minimal Linux host for easy deployment and preservation of system resources. The database is predefined and must require permission to access.
+Dependencies: Linux VM, PostgreSQL database, Python (any package that may be needed). Our goal is to limit the footprint of packages, that way there are a minimal amount of packages required to run the project.
 
 ---
 
 ## 10. Security, Ethics & Safety Considerations
-Address any relevant concerns, such as:
-- Authentication and authorization
-- Data sensitivity
-- Network exposure
-- Logging, monitoring, or automation impact
-- Ethical considerations
-
-A brief assessment of all of these is required, even if it is "N/A".
+Authentication and Authorization:  Access to the data online might require some sort of API or account to properly fetch. The on premises database will require database credentials that will be stored in a secure .env file and not be uploaded onto GitHub.
+Data Sensitivity: There will be no PHI or personal data as the information is purely informative and not governed by any privacy related laws.
+Network Exposure: The network will be limited to the connection to the local database server and the internet for information scraping. There will be no exposure of internal services in this project.
+Logging, Monitoring, or Automation Impact: Log files will be created and placed in a dedicated log file folder. Any information scraped will be logged and the whole process will be logged for troubleshooting purposes.
+Ethical Considerations: The information being scraped is publicly available and ready to use, and will be gather with the intent of using the data in a useful way.
 
 ---
 
