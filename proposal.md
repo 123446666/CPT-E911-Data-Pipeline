@@ -78,25 +78,35 @@ A final live demonstration of the working pipeline will also be completed with e
 
 ## 8. Milestones & Timeline
 Phase 1: Plan and design what the required parts are for the project to be successful. This includes making the GitHub and completing the proposal.
+
 Phase 2: Implement a system to go and fetch E199 data in a readable format and automate the collection of this information. 
+
 Phase 3: Convert the data collected to the appropriate database schema and work to make sure the data is normalized in a clean and efficient way.
+
 Phase 4: Connect to the database and send frames of the correctly formatted data. Insure that this process is automatic and will result in the output of a clean database with scraped information from E199.
+
 Phase 5: Document the project and include everything required to run the project in a live environment and create a demo slideshow to present what the project can do. Ask for feedback from the professor and complete the implementation of the automated project in a live environment.
 
 ---
 
 ## 9. Risks, Constraints & Dependencies
 Risks: Changes or inconsistencies in the source data format might be hard to work around. Limited time within the half semester project window. Database remade schema might contain constraints we need to work with. Wrong commands can wipe the database, and if any preexisting data is present, that would not be ideal.
+
 Constraints: The automated solution must stay within the CPT department and also run on a minimal Linux host for easy deployment and preservation of system resources. The database is predefined and must require permission to access.
+
 Dependencies: Linux VM, PostgreSQL database, Python (any package that may be needed). Our goal is to limit the footprint of packages, that way there are a minimal amount of packages required to run the project.
 
 ---
 
 ## 10. Security, Ethics & Safety Considerations
 Authentication and Authorization:  Access to the data online might require some sort of API or account to properly fetch. The on premises database will require database credentials that will be stored in a secure .env file and not be uploaded onto GitHub.
+
 Data Sensitivity: There will be no PHI or personal data as the information is purely informative and not governed by any privacy related laws.
+
 Network Exposure: The network will be limited to the connection to the local database server and the internet for information scraping. There will be no exposure of internal services in this project.
+
 Logging, Monitoring, or Automation Impact: Log files will be created and placed in a dedicated log file folder. Any information scraped will be logged and the whole process will be logged for troubleshooting purposes.
+
 Ethical Considerations: The information being scraped is publicly available and ready to use, and will be gather with the intent of using the data in a useful way.
 
 ---
@@ -140,7 +150,7 @@ By submitting this proposal, I acknowledge that:
 
 **Signature (Name & Date):**
 
-Student 1:  ____________________________ Date: _______________
+Student 1:  _Ian Broshes________________ Date: _4/03/2026_____
 Student 2:  ____________________________ Date: _______________
 Student 3:  ____________________________ Date: _______________
 Student 4:  ____________________________ Date: _______________
