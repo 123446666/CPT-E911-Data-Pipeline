@@ -1,57 +1,49 @@
 # Project Proposal
 
 ## 1. Project Identification
-- **Project Title:**
-- **Course:**
-- **Term:**
-- **Student Name(s):**
-- **Primary Contact:**
-- **Proposed Start Date:**
-- **Proposed End Date:**
+- Project Title: CPT E911 Data Pipeline
+- Course: CPT 298
+- Term: Spring 2028
+- Student Name(s): Ayden Sturtevant, Ian Broshes, Darian Mongiovi
+- Primary Contact: Discord
+- Proposed Start Date: Pending Project Approval
+- Proposed End Date: TBD
 
 ---
 
 ## 2. Project Selection & Motivation
-Describe why you selected this project and why you are a good fit.
 
-Include:
-- Personal or professional motivation
-- Alignment with career goals
-- Relevant interests or prior exposure
+This project was selected in response to a ticket request identifying a need for the CPT 166 PostGIS class. It is a strong fit for our 
+group as it directly applies skills we have built throughout the program and in previous projects, such as Python scripting, REST APIs, and database management, 
+while also having a real impact on other students who depend on this data.
 
 ---
 
 ## 3. Problem Statement
-Clearly describe the problem, need, or opportunity this project addresses.
 
-Answer:
-- What problem exists?
-- Who is affected?
-- Why does this problem matter?
-
-Limit to 1–2 focused paragraphs.
+The State of Maine publishes its E911 roads dataset through a public ArcGIS feature service, but there is no automated process 
+to load it into the internal PostgreSQL warehouse. Without this pipeline, CPT 166 students cannot reliably access the road 
+geometry data needed for their PostGIS assignments.
 
 ---
 
 ## 4. Proposed Solution Overview
-Provide a high-level description of your proposed solution.
 
-Include:
-- What you intend to build, deploy, or configure
-- Core features or capabilities
-- Explicit exclusions (what the project will *not* include)
+We will build a Python ETL script that pulls the Maine E911 roads dataset from the provided ArcGIS REST API, normalizes it for PostgreSQL compatibility, 
+and loads it into the proper tables. The script will run on a monthly basis to keep the data current. The project will not include a web front end, 
+real time streaming, or any changes to the source data beyond what is required for schema compatibility.
 
 ---
 
 ## 5. Technical Stack & Tools
 List the technologies you expect to use.  Please note that this solution MUST live within the cpt.internal network and must be maintainable by future students.
 
-- **Operating System(s):**
-- **Programming Language(s):**
-- **Frameworks / Libraries:**
-- **Databases / Storage:**
-- **Infrastructure (VMs, containers, etc.):**
-- **Tools (Git, CI, monitoring, APIs, etc.):**
+- Operating System(s): Internal Linux VM
+- Programming Language(s): Python, SQL
+- Frameworks / Libraries: requests, psycopg2, geopandas, pandas, fiona
+- Databases / Storage: PostgreSQL with PostGIS extension (existing cpt.internal warehouse)
+- Infrastructure (VMs, containers, etc.):  Existing CPT internal Linux VM, cron for scheduling
+- Tools (Git, CI, monitoring, APIs, etc.): Git and GitHub for version control, basic logging for monitoring and troubleshooting, environment variables for credential management
 
 ---
 
