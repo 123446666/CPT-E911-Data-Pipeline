@@ -122,12 +122,12 @@ Ethical Considerations: The information being scraped is publicly available and 
 ---
 
 ## 12. Documentation & Knowledge Transfer Plan
-Explain how this project will be documented.  Please note that this should include documentation in the UVDesk knowledgebase at the very least.  Programming projects should include readme.md files. 
+Our main documentation will be a README txt file in github(root directory). This document will outline needed package files, instructions for automation, and a diagram of the directory tree. 
 
 Include:
-- README or user documentation
-- Deployment or maintenance guides
-- How another student or administrator could continue the project
+- Python Packages, APIs, OS
+- Automation Script and CRON job specs.
+- Instructions for manual deployment.
 
 ---
 
