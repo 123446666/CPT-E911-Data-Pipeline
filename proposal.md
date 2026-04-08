@@ -147,8 +147,11 @@ By submitting this proposal, I acknowledge that:
 **Signature (Name & Date):**
 
 Student 1:  _Ian Broshes________________ Date: _4/03/2026_____
-Student 2:  ____________________________ Date: _______________
+
+Student 2:  _Darian Mongiovi____________ Date: _4/8/2026______
+
 Student 3:  ____________________________ Date: _______________
+
 Student 4:  ____________________________ Date: _______________
 
 Instructor: ____________________________ Date: _______________
