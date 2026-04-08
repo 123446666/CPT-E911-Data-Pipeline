@@ -118,10 +118,6 @@ Ethical Considerations: The information being scraped is publicly available and 
   
   Weekly Meetings: Online meetings to cordinate weekly goals, and testing timeline.
   
-- Conflict resolution approach
-  
-  Vote
-  
 ---
 
 ## 12. Documentation & Knowledge Transfer Plan
