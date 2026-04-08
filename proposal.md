@@ -106,10 +106,17 @@ Ethical Considerations: The information being scraped is publicly available and 
 ## 11. Team Structure (If Applicable)
 If working in a group, describe:
 - Team roles
+  Ian Broshes: Github setup
+  Ayden Stutevent: Task Manager, Group Cordination
+  Darian Mongiovi: SQL Test Server Setup
+  
 - Communication plan
+  Discord: General communication (first line)
+  Weekly Meetings: Online meetings to cordinate weekly goals, and testing timeline.
+  
 - Conflict resolution approach
-- Workload distribution
-
+  Vote
+  
 ---
 
 ## 12. Documentation & Knowledge Transfer Plan
