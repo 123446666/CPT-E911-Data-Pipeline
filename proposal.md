@@ -122,7 +122,7 @@ Ethical Considerations: The information being scraped is publicly available and 
 ---
 
 ## 12. Documentation & Knowledge Transfer Plan
-Our main documentation will be a README txt file in github(root directory). This document will outline needed package files, instructions for automation, and a diagram of the directory tree. 
+Our main documentation will be a README text file. This document will outline needed Python package files, SQL Documentation, instructions for automation, and a diagram of the directory tree. 
 
 Include:
 - Python Packages, APIs, OS
