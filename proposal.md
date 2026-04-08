@@ -105,8 +105,11 @@ Ethical Considerations: The information being scraped is publicly available and 
 
 ## 11. Team Structure
 - Team roles
+- 
   Ian Broshes: Github setup
+  
   Ayden Stutevent: Task Manager, Group Cordination
+  
   Darian Mongiovi: SQL Test Server Setup
   
 - Communication plan
