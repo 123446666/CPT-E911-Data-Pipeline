@@ -1,23 +1,54 @@
-# Technical Project Proposal Template
+E911 Database Populator
 
-This repository contains the required materials for submitting a project proposal
-for upper-level Computer Technology courses and Capstone projects.
+This program is designed to scrape and clean data from an API containing information about Emergency Services road data, then create and populate the events table in the PostgreSQL database.
 
-## Purpose
-This proposal is used to:
-- Evaluate project fit and scope
-- Assess technical readiness
-- Approve or redirect project direction before implementation begins
+Python Based ETL
+Language Version: Python 3.14.3
+Database: PostgreSQL
+Key Libraries: pandas, sqlalchemy, dotenv, requests
 
-## Instructions
-1. **Fork this repository** - please name it what you intend on naming your final project as **this will be your project repository**.  You can make this private if you'd like, but you'll need to invite at least myself to it.
-3. Complete the `proposal.md` file.
-4. Commit all changes with clear commit messages
-5. Submit the repository URL via Brightspace if part of an assignment, or send it to me via email or discord message if you are undertaking this for extra credit.
-6. **Do not get started on this project until your proposal has been approved!**
+Database Schema:
+Table: e911_roads
+objectid - int - Unique object identifier
+segment_id - int/str - Road segment identifier
+rcl_uid - str - Centerline unique ID
+street_full_name - str - Full street name (e.g. "North Main Street")
+street_name - str - Base street name (e.g. "Main")
+street_predir - str - Pre-directional (e.g. "N", "SW")
+street_type - str - Street type suffix (e.g. "ST", "AVE", "RD")
+street_postdir - str - Post-directional (e.g. "N", "SW")
+road_name - str - Alternate road name
+addr_left_from - int - Left side address range start
+addr_left_to - int - Left side address range end
+addr_right_from - int - Right side address range start
+addr_right_to - int - Right side address range end
+parity_left - str - Left side even/odd parity (e.g. "E", "O", "B")
+parity_right - str - Right side even/odd parity
+road_class - str/int - Road classification (e.g. highway, local)
+oneway - str - One-way direction flag (e.g. "FT", "TF", or null)
+speed - int - Speed limit (mph)
+jurisdiction - str - Managing jurisdiction (e.g. "MDOT", "LOCAL")
+route_num - str - Route number if applicable
+town - str - Town name
+city_left - str - City on left side of segment
+city_right - str - City on right side of segment
+county_left - str - County on left side
+county_right - str - County on right side
+state_left - str - State on left side
+state_right - str - State on right side
+zip_left - str - ZIP code on left side
+zip_right - str - ZIP code on right side
+psap - str - Public Safety Answering Point (911 call center)
+date_updated - datetime64[ns] - Last update timestamp
+date_effective - datetime64[ns] - Date record became effective
+date_expire - datetime64[ns] - Date record expires
+geom - str (JSON) - GeoJSON geometry string for PostGIS/JSONB
 
-> Proposals are evaluated on clarity, feasibility, technical understanding, and planning.  While ambition is certainly a factor you need to demonstrate you have the understanding and capacity to complete the project!
+*Replace dummy values in env file accordingly, and run database_connection.py to initiate program.
 
-## Notes
-- This proposal is considered a *living document* until approval
-- Once approved, scope changes require instructor review as while this readme SHOULD be updated your proposal will live with your final repository in perpetuity!
+Directory Table:
+/
+├── database_connection.py
+├── parser.py
+├── proposal.md
+├── README.md
