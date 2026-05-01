@@ -61,15 +61,15 @@ def load_to_postgres(geojson_file, table_name="e911_roads"):
     print("STEP 2: Parsing Data")
     df = get_roads_dataframe(geojson_file)
     
-    # 2. Check if table exists to handle duplicates
+    # 2. Check if table exists (Explicitly looking in maine)
     inspector = inspect(engine)
-    if inspector.has_table(table_name):
-        print(f"Table '{table_name}' exists. Checking for duplicates...")
+    if inspector.has_table(table_name, schema='maine'):
+        print(f"Table '{table_name}' exists in schema 'maine'. Checking for duplicates...")
         
-        # pull IDs from DB
-        existing_ids = pd.read_sql(f"SELECT objectid FROM {table_name}", engine)['objectid']
+        # Use a plain string here for read_sql to keep it simple
+        query = f"SELECT objectid FROM maine.{table_name}"
+        existing_ids = pd.read_sql(query, engine)['objectid']
         
-        # drop existing rows
         df = df[~df['objectid'].isin(existing_ids)]
         
         if df.empty:
@@ -79,7 +79,7 @@ def load_to_postgres(geojson_file, table_name="e911_roads"):
         print(f"Found {len(df)} new records to add.")
         mode = 'append'
     else:
-        print(f"Table '{table_name}' not found. Creating a fresh table.")
+        print(f"Table '{table_name}' not found in 'maine'. Creating a fresh table.")
         mode = 'replace'
 
     # 3. Insert into Database
@@ -88,23 +88,23 @@ def load_to_postgres(geojson_file, table_name="e911_roads"):
         df.to_sql(
             table_name, 
             engine, 
+            schema='maine',      
             if_exists=mode, 
             index=False, 
             chunksize=1000,
             method='multi' 
         )
-        print("upload complete")
+        print("Upload complete.")
 
-        # 4. Final Verification Query
-        print("Step 4: Query Test")
         with engine.connect() as conn:
-            result = conn.execute(text(f"SELECT * FROM {table_name} LIMIT 5"))
-            test_df = pd.DataFrame(result.fetchall(), columns=result.keys())
-            print(test_df)
+            # Explicitly naming columns so the table is easy to read in the console
+            res = conn.execute(text(f"SELECT objectid, street_full_name, town FROM maine.{table_name} LIMIT 5"))
+            test_df = pd.DataFrame(res.fetchall(), columns=res.keys())
+            print(test_df.to_string(index=False)) # to_string makes it look cleaner
 
     except Exception as e:
         print(f"An error occurred during upload: {e}")
-
+        
 if __name__ == "__main__":
     # Execute the entire pipeline
     try:
