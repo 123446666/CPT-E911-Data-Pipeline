@@ -14,7 +14,7 @@ ARCGIS_URL = "https://services1.arcgis.com/RbMX0mRVOFNTdLzd/arcgis/rest/services
 engine = create_engine(DB_URI)
 
 def run_full_fetcher():
-    """Fetches all features from ArcGIS and saves to geojson."""
+    #Fetches all features from ArcGIS and saves to geojson
     print("Step 1: Fetching Data")
     features = []
     offset = 0
@@ -39,7 +39,6 @@ def run_full_fetcher():
 
         features.extend(page)
         offset += page_size
-        # Updated to simple dynamic progress bar
         print(f"Fetched {len(features)} / ???")
 
     # check output directory exists
@@ -61,7 +60,6 @@ def load_to_postgres(geojson_file, table_name="e911_roads"):
     print("STEP 2: Parsing Data")
     df = get_roads_dataframe(geojson_file)
     
-    # 2. Check if table exists (Explicitly looking in maine)
     inspector = inspect(engine)
     if inspector.has_table(table_name, schema='maine'):
         print(f"Table '{table_name}' exists in schema 'maine'. Checking for duplicates...")
@@ -82,7 +80,6 @@ def load_to_postgres(geojson_file, table_name="e911_roads"):
         print(f"Table '{table_name}' not found in 'maine'. Creating a fresh table.")
         mode = 'replace'
 
-    # 3. Insert into Database
     try:
         print(f"Step 3: Upload to Database ({mode.upper()}) ---")
         df.to_sql(
