@@ -81,7 +81,7 @@ def load_to_postgres(geojson_file, table_name="e911_roads"):
         mode = 'replace'
 
     try:
-        print(f"Step 3: Upload to Database ({mode.upper()}) ---")
+        print(f"Step 3: Upload to Database")
         df.to_sql(
             table_name, 
             engine, 
