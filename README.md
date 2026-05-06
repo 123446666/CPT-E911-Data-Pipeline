@@ -90,3 +90,11 @@ Directory Table:
 ├── proposal.md
 
 ├── README.md
+
+
+
+Collaborators: 
+
+Ayden Sturtevant 
+Darian Mongiovi
+Ian Broshes
